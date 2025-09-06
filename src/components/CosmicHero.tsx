@@ -32,16 +32,16 @@ export const CosmicHero = () => {
       }`}>
         {/* Cosmic Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-          <span className="text-cosmic">Welcome to</span>
+          <span className="text-cosmic">Transformation</span>
           <br />
-          <span className="text-starlight">Lovable</span>
+          <span className="text-starlight">begins where others stop</span>
         </h1>
         
         {/* Subtitle */}
         <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-          Experience the future of web development with our cinematic, 
-          <span className="text-accent font-semibold"> space-inspired </span>
-          design system that brings your digital dreams to life.
+          Welcome to Evonour - a space for radical self-renewal. Our retreats and coaching programs uniquely combine 
+          <span className="text-accent font-semibold"> deep psychological clarity, spiritual healing, and physical nutrient activation </span>
+          into a transformative journey unlike any other.
         </p>
         
         {/* CTA Buttons */}
@@ -50,14 +50,14 @@ export const CosmicHero = () => {
             size="lg" 
             className="btn-cosmic px-8 py-4 text-lg font-semibold cosmic-glow"
           >
-            Explore the Galaxy
+            Discover Your Journey
           </Button>
           <Button 
             variant="outline" 
             size="lg"
             className="border-primary/50 bg-background/10 backdrop-blur-sm hover:bg-primary/10 px-8 py-4 text-lg"
           >
-            Learn More
+            Our Retreats
           </Button>
         </div>
         

@@ -3,42 +3,42 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
-    title: "Cinematic Design",
-    description: "Experience storytelling through design with smooth transitions and atmospheric visuals that captivate your audience.",
+    title: "Deep Psychological Clarity",
+    description: "Experience profound mental clarity through our carefully designed therapeutic approaches that address the root of personal transformation.",
+    icon: "🧠"
+  },
+  {
+    title: "Spiritual Healing",
+    description: "Connect with your authentic self through sacred practices that awaken your inner wisdom and spiritual essence.",
     icon: "✨"
   },
   {
-    title: "Cosmic Animations",
-    description: "Fluid, space-inspired animations that bring your content to life with stellar transitions and effects.",
-    icon: "🌌"
+    title: "Physical Nutrient Activation",
+    description: "Revitalize your body with specialized nutrition programs that support your transformation at the cellular level.",
+    icon: "🌿"
   },
   {
-    title: "Responsive Universe",
-    description: "Perfect experience across all devices, from mobile to desktop, with seamless cosmic aesthetics.",
-    icon: "🚀"
+    title: "Exclusive Retreats",
+    description: "Intimate, luxury retreat experiences designed for profound personal breakthrough in breathtaking natural settings.",
+    icon: "🏔️"
   },
   {
-    title: "Modular System",
-    description: "Build and customize your digital presence with our flexible, component-based architecture.",
-    icon: "⚡"
+    title: "Personal Coaching",
+    description: "One-on-one guidance from expert coaches who understand the journey of radical self-renewal and authentic living.",
+    icon: "🎯"
   },
   {
-    title: "Deep Space Palette",
-    description: "Rich cosmic colors and gradients that create depth and visual hierarchy throughout your interface.",
-    icon: "🎨"
-  },
-  {
-    title: "Stellar Performance",
-    description: "Optimized for speed and efficiency, delivering smooth experiences that feel truly otherworldly.",
-    icon: "⭐"
+    title: "Holistic Integration",
+    description: "Comprehensive approach that seamlessly weaves together mind, body, and spirit for lasting transformation.",
+    icon: "🔮"
   }
 ];
 
 export const FeaturesSection = () => {
   return (
     <CosmicSection 
-      title="Stellar Features"
-      subtitle="Discover the cosmic capabilities that set your digital presence apart"
+      title="Our Transformative Services"
+      subtitle="Discover the comprehensive approach that makes Evonour's transformation programs exclusive, profound, and unforgettable"
       className="bg-gradient-to-b from-background via-card/30 to-background"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
