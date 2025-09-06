@@ -2,41 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Cosmic Space Opera Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cosmic Background Palette */
+    --background: 240 10% 4%;
+    --foreground: 280 20% 95%;
+    
+    /* Deep Space Cards */
+    --card: 240 15% 8%;
+    --card-foreground: 280 15% 90%;
+    
+    /* Cosmic Overlays */
+    --popover: 240 20% 6%;
+    --popover-foreground: 280 20% 95%;
+    
+    /* Nebula Primary */
+    --primary: 285 85% 65%;
+    --primary-foreground: 240 10% 4%;
+    
+    /* Cosmic Secondary */
+    --secondary: 240 25% 12%;
+    --secondary-foreground: 280 20% 95%;
+    
+    /* Starfield Muted */
+    --muted: 240 20% 10%;
+    --muted-foreground: 280 10% 65%;
+    
+    /* Galaxy Accent */
+    --accent: 320 85% 70%;
+    --accent-foreground: 240 10% 4%;
+    
+    /* Destructive Cosmic */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 280 20% 95%;
+    
+    /* Cosmic Borders */
+    --border: 240 25% 15%;
+    --input: 240 25% 15%;
+    --ring: 285 85% 65%;
+    
+    /* Design System Extensions */
+    --cosmic-glow: 285 85% 65%;
+    --nebula-pink: 320 85% 70%;
+    --deep-space: 240 10% 4%;
+    --starlight: 280 20% 95%;
+    
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(285 85% 65% / 0.3), hsl(320 85% 70% / 0.3));
+    --gradient-nebula: linear-gradient(45deg, hsl(285 85% 65%), hsl(320 85% 70%));
+    --gradient-space: linear-gradient(180deg, hsl(240 10% 4%), hsl(240 25% 8%));
+    
+    /* Shadows & Effects */
+    --shadow-cosmic: 0 0 40px hsl(285 85% 65% / 0.3);
+    --shadow-nebula: 0 0 60px hsl(320 85% 70% / 0.4);
+    --glow-soft: 0 0 20px hsl(285 85% 65% / 0.2);
+    
+    /* Animations */
+    --transition-cosmic: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +127,124 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
   }
+}
+
+@layer components {
+  /* Cosmic Hero Elements */
+  .hero-cosmic {
+    background: var(--gradient-space);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-cosmic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-cosmic);
+    opacity: 0.4;
+    animation: cosmic-pulse 8s ease-in-out infinite alternate;
+  }
+  
+  .cosmic-glow {
+    box-shadow: var(--shadow-cosmic);
+    transition: var(--transition-cosmic);
+  }
+  
+  .cosmic-glow:hover {
+    box-shadow: var(--shadow-nebula);
+    transform: translateY(-2px);
+  }
+  
+  .geometric-overlay {
+    position: absolute;
+    border: 1px solid hsl(var(--cosmic-glow) / 0.3);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .text-cosmic {
+    background: var(--gradient-nebula);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: cosmic-shimmer 3s ease-in-out infinite;
+  }
+  
+  .btn-cosmic {
+    background: var(--gradient-nebula);
+    border: 1px solid hsl(var(--cosmic-glow) / 0.5);
+    box-shadow: var(--glow-soft);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-cosmic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--starlight) / 0.2), transparent);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-cosmic:hover::before {
+    left: 100%;
+  }
+  
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-cosmic);
+  }
+  
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-cosmic-float {
+    animation: cosmic-float 8s ease-in-out infinite;
+  }
+  
+  .animate-stellar-drift {
+    animation: stellar-drift 12s linear infinite;
+  }
+}
+
+@keyframes cosmic-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes cosmic-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(120deg); }
+  66% { transform: translateY(20px) rotate(240deg); }
+}
+
+@keyframes cosmic-float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+}
+
+@keyframes stellar-drift {
+  0% { transform: translateX(-100px) translateY(0px); }
+  100% { transform: translateX(100vw) translateY(-50px); }
 }

@@ -65,25 +65,42 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
+        "cosmic-float": {
+          "0%, 100%": { transform: "translateY(0px) scale(1)" },
+          "50%": { transform: "translateY(-15px) scale(1.05)" },
+        },
+        "stellar-drift": {
+          "0%": { transform: "translateX(-100px) translateY(0px)" },
+          "100%": { transform: "translateX(100vw) translateY(-50px)" },
+        },
+        "cosmic-pulse": {
+          "0%, 100%": { opacity: "0.3" },
+          "50%": { opacity: "0.6" },
+        },
+        "nebula-flow": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "zoom-in": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.1)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cosmic-float": "cosmic-float 8s ease-in-out infinite",
+        "stellar-drift": "stellar-drift 12s linear infinite",
+        "cosmic-pulse": "cosmic-pulse 8s ease-in-out infinite alternate",
+        "nebula-flow": "nebula-flow 3s ease-in-out infinite",
+        "zoom-in": "zoom-in 20s ease-out infinite",
       },
     },
   },
